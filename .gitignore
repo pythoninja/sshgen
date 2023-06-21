@@ -3,6 +3,10 @@ drafts/
 
 # Generated output
 output/*
+./config
+
+# Examples
+examples/*bak.*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
