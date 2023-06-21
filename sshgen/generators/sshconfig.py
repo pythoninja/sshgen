@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import textwrap
 from pathlib import Path
 
 from sshgen.logger import init_logger
@@ -17,7 +16,7 @@ class SSHConfig:
         self.output_file = output_file
 
     def generate(self) -> None:
-        configs = [self._process(model) for model in self.models]
+        configs: list[str] = [self._process(model) for model in self.models]
         self._save_config(configs)
 
     def _process(self, model: HostModel) -> str:
@@ -27,13 +26,14 @@ class SSHConfig:
             .replace('{{ ssh_user }}', model.ansible_user)
 
         if model.meta_fields:
-            temp = temp.replace('{{ identification }}',
-                                f'{model.meta_fields.auth_type} {model.meta_fields.auth_path}') \
-                .replace('{{ host_alias }}', ' '.join(model.meta_fields.aliases))
-        else:
-            fallback_auth = '\n'.join(self._get_fallback_auth())
-            temp = temp.replace('{{ identification }}', fallback_auth) \
-                .replace('{{ host_alias }}', '')
+            if model.meta_fields.aliases:
+                temp = temp.replace('{{ host_alias }}', ' '.join(model.meta_fields.aliases))
+            if model.meta_fields.auth_type and model.meta_fields.auth_path:
+                temp = temp.replace('{{ identification }}',
+                                    f'{model.meta_fields.auth_type} {model.meta_fields.auth_path}')
+
+        fallback_auth = '\n'.join(self._get_fallback_auth())
+        temp = temp.replace('{{ identification }}', fallback_auth).replace('{{ host_alias }}', '')
 
         return temp
 
@@ -41,10 +41,12 @@ class SSHConfig:
         return self.template_path.read_text()
 
     def _save_config(self, templates: list[str]) -> None:
-        self.output_file.touch(exist_ok=True)
+        self._create_output_file()
         self.output_file.write_text('\n'.join(templates))
-
         log.info("Generated SSH config file was saved to %s", self.output_file)
 
-    def _get_fallback_auth(self) -> tuple[str, str]:
-        return 'IdentityFile ~/.ssh/ssh_key', textwrap.indent('IdentitiesOnly yes', '    ')
+    def _create_output_file(self) -> None:
+        self.output_file.touch(exist_ok=True)
+
+    def _get_fallback_auth(self) -> list[str]:
+        return ['IdentityFile ~/.ssh/ssh_key', '    IdentitiesOnly yes']
