@@ -24,10 +24,22 @@ TBD
 pip install --user git+https://github.com/pythoninja/sshgen@v0.1.1
 ```
 
+Or
+
+```shell
+pip install --user sshgen
+```
+
 ### Using pipx
 
 ```shell
 pipx install git+https://github.com/pythoninja/sshgen@v0.1.1
+```
+
+Or just run without installing:
+
+```shell
+pipx run sshgen
 ```
 
 ## Usage
