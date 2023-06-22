@@ -8,6 +8,9 @@ authors = ["pythoninja <pythoninja@users.noreply.github.com>"]
 readme = "README.md"
 keywords = ["ssh", "config", "ansible", "cli", "generator"]
 
+[tool.poetry.urls]
+"Changelog" = "https://github.com/pythoninja/sshgen/blob/master/CHANGELOG.md"
+
 [tool.poetry.scripts]
 sshgen = "sshgen.cli:app"
 
