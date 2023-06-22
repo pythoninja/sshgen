@@ -2,7 +2,7 @@
 
 SSH configuration generator based on your Ansible hosts YAML file.
 
-Current version: v0.1.0
+Current version: v0.1.1
 
 ## Table of Contents
 
@@ -21,13 +21,13 @@ TBD
 ### Using pip
 
 ```shell
-pip install --user git+https://github.com/pythoninja/sshgen@v0.1.0
+pip install --user git+https://github.com/pythoninja/sshgen@v0.1.1
 ```
 
 ### Using pipx
 
 ```shell
-pipx install git+https://github.com/pythoninja/sshgen@v0.1.0
+pipx install git+https://github.com/pythoninja/sshgen@v0.1.1
 ```
 
 ## Usage

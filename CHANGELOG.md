@@ -2,16 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [0.1.1] - 2023-06-22
 
 ### Bug Fixes
 
 -  Properly include aliases ([PR #3](https://github.com/pythoninja/sshgen/pull/3)) ([3795443](https://github.com/pythoninja/sshgen/commit/37954430364805292f6f3dbe4a4bcd7e31193676))
 
+### Continuous Integration
+
+-  Add linter and release workflows ([PR #8](https://github.com/pythoninja/sshgen/pull/8)) ([ef77472](https://github.com/pythoninja/sshgen/commit/ef774722d63d528aaa1e679ee857eac7f3ffc9a8))
+-  Add dependabot ([PR #9](https://github.com/pythoninja/sshgen/pull/9)) ([a006907](https://github.com/pythoninja/sshgen/commit/a006907e4109748e1000b50086487a0a570fd3d2))
+
 ### Miscellaneous Tasks
 
+- *(deps-dev)* Bump ruff from 0.0.272 to 0.0.274 ([PR #1](https://github.com/pythoninja/sshgen/pull/1)) ([fa35a10](https://github.com/pythoninja/sshgen/commit/fa35a10cb6aea6df3d947b59560a1d180eb65c03))
 - *(dev)* Exclude files from example dir ([ee481ab](https://github.com/pythoninja/sshgen/commit/ee481aba26a796c649cd49800eaee2bba2fa5a45))
 - *(dev)* Bump versions in readme ([PR #5](https://github.com/pythoninja/sshgen/pull/5)) ([560f0b6](https://github.com/pythoninja/sshgen/commit/560f0b6e742fdee60d88baebdc7b402a1624a482))
+- *(dev)* Add changelog generator ([PR #7](https://github.com/pythoninja/sshgen/pull/7)) ([1618a78](https://github.com/pythoninja/sshgen/commit/1618a78b11d72b7ef60b0397bebd2f5fe72916b1))
+- *(dev)* Fix ruff version ([955af2c](https://github.com/pythoninja/sshgen/commit/955af2ca2aa8ccdf0970ee8584144d4c228c6053))
+- *(dev)* Add link to changelog for pypi ([8ad9abb](https://github.com/pythoninja/sshgen/commit/8ad9abb87493e14d5651b099b6b721642eb65c79))
+- *(dev)* Run changelog generator on version bump ([c9abbec](https://github.com/pythoninja/sshgen/commit/c9abbec5d43ab24e5bba5829d627f7ef1bd1bf22))
+- *(dev)* Improve search for version string in readme ([a7344fb](https://github.com/pythoninja/sshgen/commit/a7344fb631bfc3ef62c5694513c0506855d104ba))
 
 ## [0.1.0] - 2023-06-21
 
