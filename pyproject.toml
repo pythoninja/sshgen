@@ -49,7 +49,7 @@ search = "Current version: v{current_version}"
 
 [[tool.tbump.file]]
 src = "README.md"
-search = "@v0.1.0"
+search = "sshgen@v"
 
 [[tool.tbump.file]]
 src = "sshgen/__init__.py"
