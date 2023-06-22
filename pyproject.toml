@@ -59,6 +59,10 @@ search = "__version__ = '{current_version}'"
 name = "Bump poetry"
 cmd = "poetry version {new_version}"
 
+[[tool.tbump.before_commit]]
+name = "Generate Changelog"
+cmd = "git cliff --tag {new_version} --output CHANGELOG.md"
+
 [tool.ruff]
 exclude = []
 select = ["B", "C9", "E", "F", "G", "I", "ISC", "PIE", "PL", "TID", "W", "YTT"]
