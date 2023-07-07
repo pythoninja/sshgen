@@ -5,10 +5,14 @@ on:
     paths:
       - sshgen/**
       - tests/**
+      - pyproject.toml
+      - poetry.lock
   pull_request:
     paths:
       - sshgen/**
       - tests/**
+      - pyproject.toml
+      - poetry.lock
 
 jobs:
   ruff:
