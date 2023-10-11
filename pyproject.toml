@@ -15,7 +15,7 @@ keywords = ["ssh", "config", "ansible", "cli", "generator"]
 sshgen = "sshgen.cli:app"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
 ruamel-yaml = "^0.17.31"
 typer = "^0.9.0"
 
@@ -68,7 +68,7 @@ exclude = []
 select = ["B", "C9", "E", "F", "G", "I", "ISC", "PIE", "PL", "TID", "W", "YTT"]
 ignore = []
 line-length = 120
-target-version = "py311"
+target-version = "py312"
 
 [tool.ruff.pylint]
 max-args = 5
