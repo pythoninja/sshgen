@@ -49,4 +49,6 @@ class SSHConfig:
         self.output_file.touch(exist_ok=True)
 
     def _get_fallback_auth(self) -> list[str]:
-        return ['IdentityFile ~/.ssh/ssh_key', '    IdentitiesOnly yes']
+        parameter = 'IdentitiesOnly yes'
+        width = len(parameter) + 4
+        return ['IdentityFile ~/.ssh/ssh_key', f'{parameter: >{width}}']
