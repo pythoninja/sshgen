@@ -6,9 +6,17 @@ Current version: v0.1.1
 
 ## Table of Contents
 
-<!-- insert TOC here -->
-
-TBD
+<!-- TOC -->
+* [sshgen](#sshgen)
+  * [Table of Contents](#table-of-contents)
+  * [Features](#features)
+  * [Installation](#installation)
+    * [Using pip](#using-pip)
+    * [Using pipx](#using-pipx)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Changelog](#changelog)
+<!-- TOC -->
 
 ## Features
 
@@ -41,6 +49,8 @@ Or just run without installing:
 ```shell
 pipx run sshgen
 ```
+
+[(Go to top)](#table-of-contents)
 
 ## Usage
 
@@ -115,11 +125,17 @@ as the root user and utilizing 1password as your SSH agent.
 
 For more examples, please refer to the [examples](https://github.com/pythoninja/sshgen/tree/master/examples) directory.
 
+[(Go to top)](#table-of-contents)
+
 ## License
 
 There are no specific requirements for usage and distribution. For more information, refer to
 the [LICENSE](https://github.com/pythoninja/sshgen/blob/master/LICENSE).
 
+[(Go to top)](#table-of-contents)
+
 ## Changelog
 
 For the changelog, please see [CHANGELOG.md](https://github.com/pythoninja/sshgen/blob/master/CHANGELOG.md).
+
+[(Go to top)](#table-of-contents)
