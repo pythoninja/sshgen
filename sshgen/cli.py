@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from typing import Annotated
+from typing import Annotated, Optional
 
 import typer
 
@@ -35,7 +35,7 @@ def _version_callback(value: bool) -> None:
 # noinspection PyUnusedLocal
 @app.callback()
 def callback(
-        version: Annotated[bool | None,  # noqa: ARG001
+        version: Annotated[Optional[bool],  # noqa: ARG001, UP007
         typer.Option('-v', '--version', callback=_version_callback, is_eager=True)] = None,
 ) -> None:
     """
