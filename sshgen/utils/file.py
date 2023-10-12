@@ -47,5 +47,5 @@ class FileUtils:
                 file_path.parent.mkdir(parents=True, exist_ok=True)
                 file_path.touch(exist_ok=True)
             except OSError as e:
-                log.error("Failed to create file or directory: %s, reason: %s", file_path, e.strerror)
+                log.exception('Failed to create file or directory: %s, reason: %s', file_path, e.strerror)
                 sys.exit(1)

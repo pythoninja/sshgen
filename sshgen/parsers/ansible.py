@@ -7,7 +7,6 @@ from sshgen.utils.file import FileUtils
 
 
 class AnsibleHostsParser:
-
     def __init__(self, hosts_file_path: Path | None = None):
         self._yaml = YAML()
         self._default_hosts_file = 'examples/hosts.yml'
