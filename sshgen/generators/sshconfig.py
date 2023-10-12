@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import copy
 from pathlib import Path
 
 from sshgen.logger import init_logger
@@ -10,14 +11,19 @@ log = init_logger(__name__)
 
 class SSHConfig:
     def __init__(self, models: list[HostModel], output_file: Path | None = None):
-        self.models = models
+        self.raw_models = models
         self.template_path = FileUtils.as_package_file('templates/ssh_config.template')
         self.ssh_template = self._open_template()
         self.output_file = output_file
 
     def generate(self) -> None:
-        configs: list[str] = [self._process(model) for model in self.models]
+        filtered_models: list[HostModel] = self._filter_models()
+        configs: list[str] = [self._process(m) for m in filtered_models]
         self._save_config(configs)
+
+    def _filter_models(self) -> list[HostModel]:
+        temp_models = copy.deepcopy(self.raw_models)
+        return [model for model in temp_models if not (model.meta_fields and model.meta_fields.skip)]
 
     def _process(self, model: HostModel) -> str:
         temp = self.ssh_template.replace('{{ host }}', model.host) \
