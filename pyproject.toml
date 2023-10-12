@@ -73,7 +73,6 @@ select = [
     "E",    # pycodestyle - error
     "F",    # Pyflakes
     "G",    # flake8-logging-format
-    "I",    # isort
     "N",    # pep8-naming
     "Q",    # flake8-quotes
     "S",    # flake8-bandit
