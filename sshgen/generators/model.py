@@ -23,9 +23,10 @@ class MapToHost:
                 auth_type = meta.get('_auth_type')
                 auth_path = meta.get('_auth_path')
                 aliases = meta.get('_aliases')
+                skip = meta.get('_skip')
 
-                if any(isinstance(field, str | list) for field in (auth_type, auth_path, aliases)):
-                    model.meta_fields = MetaFieldsModel(auth_type, auth_path, aliases)
+                if any(isinstance(field, str | list | bool) for field in (auth_type, auth_path, aliases, skip)):
+                    model.meta_fields = MetaFieldsModel(auth_type, auth_path, aliases, skip)
 
                 host_models.append(model)
 
