@@ -2,7 +2,7 @@
 from sshgen.cli import app
 
 
-def main():
+def main() -> None:
     app()
 
 

@@ -6,7 +6,8 @@ from sshgen.models.metafields import MetaFieldsModel
 
 
 class MapToHost:
-    def convert(self, parsed_hosts: CommentedMap) -> list[HostModel]:
+    @staticmethod
+    def convert(parsed_hosts: CommentedMap) -> list[HostModel]:
         host_models = []
 
         for host_group, hosts in parsed_hosts.items():
@@ -15,7 +16,7 @@ class MapToHost:
                     host=host,
                     host_group=host_group,
                     ansible_host=host_details['ansible_host'],
-                    ansible_user=host_details['ansible_user']
+                    ansible_user=host_details['ansible_user'],
                 )
 
                 meta = host_details.get('_meta', {})

@@ -43,12 +43,13 @@ class SSHConfig:
     def _save_config(self, templates: list[str]) -> None:
         self._create_output_file()
         self.output_file.write_text('\n'.join(templates))
-        log.info("Generated SSH config file was saved to %s", self.output_file)
+        log.info('Generated SSH config file was saved to %s', self.output_file)
 
     def _create_output_file(self) -> None:
         self.output_file.touch(exist_ok=True)
 
-    def _get_fallback_auth(self) -> list[str]:
+    @staticmethod
+    def _get_fallback_auth() -> list[str]:
         parameter = 'IdentitiesOnly yes'
         width = len(parameter) + 4
         return ['IdentityFile ~/.ssh/ssh_key', f'{parameter: >{width}}']
