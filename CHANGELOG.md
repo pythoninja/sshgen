@@ -2,32 +2,64 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.1] - 2023-06-22
+## [unreleased]
+
+### Features
+
+- Skip selected hosts with new `_meta` option - ([e7bdc9b](https://github.com/pythoninja/sshgen/commit/e7bdc9b4d42d181a72fd9ee97d2e98f16166f3cf))
 
 ### Bug Fixes
 
--  Properly include aliases ([PR #3](https://github.com/pythoninja/sshgen/pull/3)) ([3795443](https://github.com/pythoninja/sshgen/commit/37954430364805292f6f3dbe4a4bcd7e31193676))
+- Change compatible type - ([67f9099](https://github.com/pythoninja/sshgen/commit/67f9099dacd55c8f94ec4c946b419b072159744e))
 
-### Continuous Integration
+### Refactor
 
--  Add linter and release workflows ([PR #8](https://github.com/pythoninja/sshgen/pull/8)) ([ef77472](https://github.com/pythoninja/sshgen/commit/ef774722d63d528aaa1e679ee857eac7f3ffc9a8))
--  Add dependabot ([PR #9](https://github.com/pythoninja/sshgen/pull/9)) ([a006907](https://github.com/pythoninja/sshgen/commit/a006907e4109748e1000b50086487a0a570fd3d2))
+- Dynamic format fallback auth - ([763b357](https://github.com/pythoninja/sshgen/commit/763b3570044b231567a69fd5645b4d6e0b3984a8))
+
+### Development
+
+- *(dev)* Change type of quotes (experimentally) - ([9b9f75d](https://github.com/pythoninja/sshgen/commit/9b9f75dd2881fbcd0776277a2271558eaf2b3e1d))
+- *(dev)* Remove isort rule - ([8815fb9](https://github.com/pythoninja/sshgen/commit/8815fb999bc11e58300181c8cfe47bfa93c09263))
+- *(dev)* Add ruff rules - ([a36d07f](https://github.com/pythoninja/sshgen/commit/a36d07ff647249679c6ae495e0bae9874d0ea634))
+- *(dev)* Add pre-commit - ([e338bf3](https://github.com/pythoninja/sshgen/commit/e338bf3dc08479021270ab85b2d612e9d7f78d58))
+- *(dev)* Bump Python to 3.12 in pyproject.toml - ([9670e35](https://github.com/pythoninja/sshgen/commit/9670e3598fbb76d87362e277e20afa8b5a9f1547))
+- *(dev)* Regenerate poetry.lock - ([d4180f0](https://github.com/pythoninja/sshgen/commit/d4180f052b82fef546b7f2c9aff7479aaf5cb622))
 
 ### Miscellaneous Tasks
 
-- *(deps-dev)* Bump ruff from 0.0.272 to 0.0.274 ([PR #1](https://github.com/pythoninja/sshgen/pull/1)) ([fa35a10](https://github.com/pythoninja/sshgen/commit/fa35a10cb6aea6df3d947b59560a1d180eb65c03))
-- *(dev)* Exclude files from example dir ([ee481ab](https://github.com/pythoninja/sshgen/commit/ee481aba26a796c649cd49800eaee2bba2fa5a45))
-- *(dev)* Bump versions in readme ([PR #5](https://github.com/pythoninja/sshgen/pull/5)) ([560f0b6](https://github.com/pythoninja/sshgen/commit/560f0b6e742fdee60d88baebdc7b402a1624a482))
-- *(dev)* Add changelog generator ([PR #7](https://github.com/pythoninja/sshgen/pull/7)) ([1618a78](https://github.com/pythoninja/sshgen/commit/1618a78b11d72b7ef60b0397bebd2f5fe72916b1))
-- *(dev)* Fix ruff version ([955af2c](https://github.com/pythoninja/sshgen/commit/955af2ca2aa8ccdf0970ee8584144d4c228c6053))
-- *(dev)* Add link to changelog for pypi ([8ad9abb](https://github.com/pythoninja/sshgen/commit/8ad9abb87493e14d5651b099b6b721642eb65c79))
-- *(dev)* Run changelog generator on version bump ([c9abbec](https://github.com/pythoninja/sshgen/commit/c9abbec5d43ab24e5bba5829d627f7ef1bd1bf22))
-- *(dev)* Improve search for version string in readme ([a7344fb](https://github.com/pythoninja/sshgen/commit/a7344fb631bfc3ef62c5694513c0506855d104ba))
+- Bump Poetry to 1.6.1 and Python to 3.12 - ([09ac311](https://github.com/pythoninja/sshgen/commit/09ac31117dd580dc8ff2c70a130399f004a76fb6))
+- Lint on toml and lock changes ([#15](https://github.com/pythoninja/sshgen/issues/15)) - ([7005a88](https://github.com/pythoninja/sshgen/commit/7005a8880a3b856a688187bd1e3b277f59271bdc))
+
+### Documentation
+
+- *(readme)* Update install instructions - ([5abddbc](https://github.com/pythoninja/sshgen/commit/5abddbc37eedeb5d17c89afbd73ed9ebd5a5634a))
+- Add toc to readme - ([90636a6](https://github.com/pythoninja/sshgen/commit/90636a697a605cf357a818ec282a3f6da38d224d))
+
+## [0.1.1](https://github.com/pythoninja/sshgen/compare/v0.1.0..v0.1.1) - 2023-06-22
+
+### Bug Fixes
+
+- Properly include aliases ([#3](https://github.com/pythoninja/sshgen/issues/3)) - ([3795443](https://github.com/pythoninja/sshgen/commit/37954430364805292f6f3dbe4a4bcd7e31193676))
+
+### Development
+
+- *(dev)* Improve search for version string in readme - ([a7344fb](https://github.com/pythoninja/sshgen/commit/a7344fb631bfc3ef62c5694513c0506855d104ba))
+- *(dev)* Run changelog generator on version bump - ([c9abbec](https://github.com/pythoninja/sshgen/commit/c9abbec5d43ab24e5bba5829d627f7ef1bd1bf22))
+- *(dev)* Add link to changelog for pypi - ([8ad9abb](https://github.com/pythoninja/sshgen/commit/8ad9abb87493e14d5651b099b6b721642eb65c79))
+- *(dev)* Fix ruff version - ([955af2c](https://github.com/pythoninja/sshgen/commit/955af2ca2aa8ccdf0970ee8584144d4c228c6053))
+- *(dev)* Add changelog generator ([#7](https://github.com/pythoninja/sshgen/issues/7)) - ([1618a78](https://github.com/pythoninja/sshgen/commit/1618a78b11d72b7ef60b0397bebd2f5fe72916b1))
+- *(dev)* Bump versions in readme ([#5](https://github.com/pythoninja/sshgen/issues/5)) - ([560f0b6](https://github.com/pythoninja/sshgen/commit/560f0b6e742fdee60d88baebdc7b402a1624a482))
+- *(dev)* Exclude files from example dir - ([ee481ab](https://github.com/pythoninja/sshgen/commit/ee481aba26a796c649cd49800eaee2bba2fa5a45))
+
+### Miscellaneous Tasks
+
+- Add dependabot ([#9](https://github.com/pythoninja/sshgen/issues/9)) - ([a006907](https://github.com/pythoninja/sshgen/commit/a006907e4109748e1000b50086487a0a570fd3d2))
+- Add linter and release workflows ([#8](https://github.com/pythoninja/sshgen/issues/8)) - ([ef77472](https://github.com/pythoninja/sshgen/commit/ef774722d63d528aaa1e679ee857eac7f3ffc9a8))
 
 ## [0.1.0] - 2023-06-21
 
-### Miscellaneous Tasks
+### Development
 
-- *(dev)* Fix project name ([858aced](https://github.com/pythoninja/sshgen/commit/858aced9365754803b3b20162417102ad0378853))
+- *(dev)* Fix project name - ([858aced](https://github.com/pythoninja/sshgen/commit/858aced9365754803b3b20162417102ad0378853))
 
 <!-- generated by git-cliff -->
