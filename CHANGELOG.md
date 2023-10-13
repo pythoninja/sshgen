@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [0.2.0](https://github.com/pythoninja/sshgen/compare/v0.1.1..0.2.0) - 2023-10-13
 
 ### Features
 
@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file.
 
 ### Development
 
+- *(dev)* Generate beauty changelog ([#47](https://github.com/pythoninja/sshgen/issues/47)) - ([3170efe](https://github.com/pythoninja/sshgen/commit/3170efe95b5676d699e7af069f950c4c46a32231))
 - *(dev)* Change type of quotes (experimentally) - ([9b9f75d](https://github.com/pythoninja/sshgen/commit/9b9f75dd2881fbcd0776277a2271558eaf2b3e1d))
 - *(dev)* Remove isort rule - ([8815fb9](https://github.com/pythoninja/sshgen/commit/8815fb999bc11e58300181c8cfe47bfa93c09263))
 - *(dev)* Add ruff rules - ([a36d07f](https://github.com/pythoninja/sshgen/commit/a36d07ff647249679c6ae495e0bae9874d0ea634))
