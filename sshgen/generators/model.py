@@ -19,6 +19,9 @@ class MapToHost:
                     ansible_user=host_details['ansible_user'],
                 )
 
+                if host_details.get('ansible_port'):
+                    model.ansible_port = host_details['ansible_port']
+
                 meta = host_details.get('_meta', {})
                 auth_type = meta.get('_auth_type')
                 auth_path = meta.get('_auth_path')
