@@ -23,6 +23,7 @@ Current version: v0.2.0
 1. Generates a `config` file to merge with your existing SSH configuration.
 2. Custom configuration for ssh-agent.
 3. Custom SSH aliases for quick connections.
+4. Skip selected hosts from results file.
 
 ## Installation
 
@@ -68,18 +69,32 @@ group1: # host_group
         _auth_type: IdentityAgent
         _auth_path: ~/.1password/agent.sock
         _aliases: [ "base", "another-alias" ]
+        _skip: false
 
     host2:
       ansible_host: 127.0.0.2
       ansible_user: manager
       ansible_password:
+      ansible_port: 19020
+      _meta:
+        _skip: true
 
 group2:
   hosts:
-    another_host1:
+    host3:
       ansible_host: 172.19.0.1
       ansible_user: postgres
       ansible_password:
+      ansible_port: 19222
+
+    host4:
+        ansible_host: 172.99.99.99
+        ansible_user: postgres
+        _meta:
+          _auth_type: IdentityAgent
+          _auth_path: ~/.1password/agent.sock
+          _aliases: [ "base", "another-alias" ]
+          _skip: false
 ```
 
 To use `sshgen`, you can either invoke it as a Python module using `python -m sshgen --help` or directly use the
@@ -104,19 +119,21 @@ Check the file contents `cat /my_dir/config`:
 Host host1 base another-alias # group1
     HostName 127.0.0.1
     User root
+    Port 22
     IdentityAgent ~/.1password/agent.sock
 
-Host host2  # group1
-    HostName 127.0.0.2
-    User manager
+Host host3  # group2
+    HostName 172.19.0.1
+    User postgres
+    Port 19222
     IdentityFile ~/.ssh/ssh_key
     IdentitiesOnly yes
 
-Host another_host1  # group2
-    HostName 172.19.0.1
+Host host4 postgres-server # group2
+    HostName 172.99.99.99
     User postgres
-    IdentityFile ~/.ssh/ssh_key
-    IdentitiesOnly yes
+    Port 22
+    IdentityAgent ~/.1password/agent.sock
 ```
 
 Copy and insert the output into your `~/.ssh/config` file. After that, you can use any of the defined aliases to SSH
