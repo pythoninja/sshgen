@@ -10,4 +10,5 @@ class HostModel:
     host_group: str
     ansible_host: str
     ansible_user: str
+    ansible_port: int = 22
     meta_fields: MetaFieldsModel | None = None
