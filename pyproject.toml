@@ -20,7 +20,7 @@ ruamel-yaml = "^0.17.31"
 typer = "^0.9.0"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0"
+ruff = "*"
 
 [build-system]
 requires = ["poetry-core"]
