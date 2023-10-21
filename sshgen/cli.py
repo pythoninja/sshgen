@@ -3,7 +3,9 @@ from typing import Annotated, Optional
 
 import typer
 
+from logger import init_logger
 from sshgen import __app_name__, __version__
+from sshgen.models.loglevel import LogLevel
 from sshgen.utils.app import AppUtils
 from sshgen.utils.file import FileUtils
 
@@ -15,7 +17,7 @@ def generate_hosts_file(hosts_file: Annotated[str, typer.Option('--hosts-file', 
                         output: Annotated[str, typer.Option('--output', '-o')] = './config') -> None:
     """
     Command to generate SSH configuration file.
-    By default, it uses hosts.yml file placed in your working directory and outputs to file named as "config"
+    By default, it uses file hosts.yml placed in your working directory and outputs to the file named "config"
 
     Example usage: sshconf generate -o my_ssh_config
     """
@@ -34,14 +36,23 @@ def _version_callback(value: bool) -> None:
 
 # noinspection PyUnusedLocal
 @app.callback()
-def callback(
-        version: Annotated[Optional[bool],  # noqa: ARG001, UP007
-        typer.Option('-v', '--version', callback=_version_callback, is_eager=True)] = None,
+def main(
+        verbose: Annotated[
+            Optional[bool],
+            typer.Option('--verbose', is_eager=True, help='Switch log level to DEBUG, default is INFO.'),
+        ] = False,
+        version: Annotated[
+            Optional[bool],
+            typer.Option('-v', '--version', callback=_version_callback, is_eager=True),
+        ] = None,
 ) -> None:
     """
     sshgen generates SSH configuration file based on an Ansible hosts file.
     """
-    return
+    if verbose:
+        init_logger(level=LogLevel.DEBUG)
+    else:
+        init_logger(level=LogLevel.INFO)
 
 
 if __name__ == '__main__':

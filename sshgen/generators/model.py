@@ -1,8 +1,12 @@
 #!/usr/bin/env python
+import logging
+
 from ruamel.yaml import CommentedMap
 
 from sshgen.models.host import HostModel
 from sshgen.models.metafields import MetaFieldsModel
+
+log = logging.getLogger(__name__)
 
 
 class MapToHost:
@@ -32,5 +36,7 @@ class MapToHost:
                     model.meta_fields = MetaFieldsModel(auth_type, auth_path, aliases, skip)
 
                 host_models.append(model)
+
+        log.debug('Total hosts found (include skipped): %s', len(host_models))
 
         return host_models

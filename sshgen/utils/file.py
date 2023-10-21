@@ -1,10 +1,9 @@
 #!/usr/bin/env python
+import logging
 import sys
 from pathlib import Path
 
-from sshgen.logger import init_logger
-
-log = init_logger(__name__)
+log = logging.getLogger(__name__)
 
 
 class FileUtils:
