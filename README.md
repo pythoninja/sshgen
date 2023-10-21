@@ -57,7 +57,7 @@ pipx run sshgen
 
 Before using this tool, make sure you have an Ansible `hosts.yml` in your current working directory.
 
-Consider the following example `hosts.yml` file, which defines 2 host groups with a total of 3 hosts:
+Consider the following example `hosts.yml` file, which defines 2 host groups with a total of 4 hosts:
 
 ```yaml
 group1: # host_group
