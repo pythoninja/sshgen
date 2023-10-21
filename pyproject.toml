@@ -100,7 +100,7 @@ select = [
     "UP",   # pyupgrade
     "YTT"   # flake8-2020
 ]
-ignore = ["ANN101", "ANN204"]
+ignore = ["ANN101", "ANN204", "ARG001", "UP007"]
 line-length = 120
 target-version = "py312"
 preview = true
