@@ -2,7 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.2.0](https://github.com/pythoninja/sshgen/compare/v0.1.1..0.2.0) - 2023-10-13
+## [0.3.0](https://github.com/pythoninja/sshgen/compare/v0.2.0..0.3.0) - 2023-10-21
+
+### Features
+
+- Add verbose flag - ([283ea98](https://github.com/pythoninja/sshgen/commit/283ea9876b41c71b461d939be26d4816de5688dc))
+- Add support for custom ssh port ([#50](https://github.com/pythoninja/sshgen/issues/50)) - ([c93f431](https://github.com/pythoninja/sshgen/commit/c93f43148383514c255f9e05764718a03a93e97e))
+
+### Bug Fixes
+
+- *(linter)* Ignore ARG001 and UP007 rules - ([21f320c](https://github.com/pythoninja/sshgen/commit/21f320c58fd22883888d28ac564564addd4ca435))
+- *(linter)* PLR6201 issue ([#60](https://github.com/pythoninja/sshgen/issues/60)) - ([e65ccf5](https://github.com/pythoninja/sshgen/commit/e65ccf5a3c1cc237f514c0ea4add9c7caf456750))
+- Import logger from cli - ([ac50be2](https://github.com/pythoninja/sshgen/commit/ac50be223eea2420a41cc3b1f7f0389b25f38c2a))
+
+### Miscellaneous Tasks
+
+- Change ruff version for dependabot - ([89dd000](https://github.com/pythoninja/sshgen/commit/89dd000a2e1d32c630d5e4d46c0b37f7335dbdc5))
+- Change python version for dependabot - ([42165c1](https://github.com/pythoninja/sshgen/commit/42165c1ca7c84960b9b05c316f97df19ff2b48a6))
+
+### Documentation
+
+- Add verbose mode example to readme - ([4b7e2d4](https://github.com/pythoninja/sshgen/commit/4b7e2d45810d0f17bf2cc84b52fd17a5984550b2))
+- Fix total hosts in example ([#62](https://github.com/pythoninja/sshgen/issues/62)) - ([6ddc5a4](https://github.com/pythoninja/sshgen/commit/6ddc5a424460ca25d5df7fa75ac922a766dce00e))
+- Update readme example file ([#51](https://github.com/pythoninja/sshgen/issues/51)) - ([684d24d](https://github.com/pythoninja/sshgen/commit/684d24dffbcff9bcc301018825810d9415605164))
+
+## [0.2.0](https://github.com/pythoninja/sshgen/compare/v0.1.1..v0.2.0) - 2023-10-13
 
 ### Features
 

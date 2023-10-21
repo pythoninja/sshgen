@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sshgen"
-version = "0.2.0"
+version = "0.3.0"
 description = "SSH config generator based on Ansible hosts yaml file"
 license = "Unlicense"
 repository = "https://github.com/pythoninja/sshgen"
@@ -30,7 +30,7 @@ build-backend = "poetry.core.masonry.api"
 github_url = "https://github.com/pythoninja/sshgen"
 
 [tool.tbump.version]
-current = "0.2.0"
+current = "0.3.0"
 regex = '''
   (?P<major>\d+)
   \.
