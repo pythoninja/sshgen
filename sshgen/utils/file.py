@@ -34,7 +34,7 @@ class FileUtils:
 
     @staticmethod
     def _is_yaml_file(file_path: Path) -> bool:
-        return file_path.suffix in ['.yml', '.yaml']
+        return file_path.suffix in {'.yml', '.yaml'}
 
     @staticmethod
     def _is_empty(file_path: Path) -> bool:
