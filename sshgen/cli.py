@@ -3,8 +3,8 @@ from typing import Annotated, Optional
 
 import typer
 
-from logger import init_logger
 from sshgen import __app_name__, __version__
+from sshgen.logger import init_logger
 from sshgen.models.loglevel import LogLevel
 from sshgen.utils.app import AppUtils
 from sshgen.utils.file import FileUtils
