@@ -107,6 +107,12 @@ configuration, run the following command:
 sshgen generate
 ```
 
+To display addition logs (verbose mode), add `--verbose` flag:
+
+```
+sshgen --verbose generate
+```
+
 After executing the command, you will see the following output:
 
 ```text
@@ -135,6 +141,36 @@ Host host4 postgres-server # group2
     Port 22
     IdentityAgent ~/.1password/agent.sock
 ```
+
+If you ran using verbose mode, you should see additional information:
+
+<details><summary>Verbose output example</summary>
+<p>
+
+```text
+[2023-10-21 17:53:31] [DEBUG] - Loading ansible hosts file: /home/user/code/python/sshgen/examples/hosts.yml
+[2023-10-21 17:53:31] [DEBUG] - Total hosts found (include skipped): 4
+[2023-10-21 17:53:31] [DEBUG] - Using template file /home/user/code/python/sshgen/sshgen/templates/ssh_config.template to generate ssh config
+[2023-10-21 17:53:31] [DEBUG] - Filtering hosts where _skip metafield was defined
+[2023-10-21 17:53:31] [DEBUG] - Host host1 should be skipped: False
+[2023-10-21 17:53:31] [DEBUG] - Host host2 should be skipped: True
+[2023-10-21 17:53:31] [DEBUG] - Host host3 should be skipped: False
+[2023-10-21 17:53:31] [DEBUG] - Host host4 should be skipped: False
+[2023-10-21 17:53:31] [DEBUG] - Processing host1 from group group1
+[2023-10-21 17:53:31] [DEBUG] - Adding SSH port 22 for host host1
+[2023-10-21 17:53:31] [DEBUG] - Adding aliases ['base', 'another-alias'] for host host1
+[2023-10-21 17:53:31] [DEBUG] - Adding custom auth methods for host host1
+[2023-10-21 17:53:31] [DEBUG] - Processing host3 from group group2
+[2023-10-21 17:53:31] [DEBUG] - Adding SSH port 19222 for host host3
+[2023-10-21 17:53:31] [DEBUG] - Processing host4 from group group2
+[2023-10-21 17:53:31] [DEBUG] - Adding SSH port 22 for host host4
+[2023-10-21 17:53:31] [DEBUG] - Adding aliases ['postgres-server'] for host host4
+[2023-10-21 17:53:31] [DEBUG] - Adding custom auth methods for host host4
+[2023-10-21 17:53:31] [INFO] - Generated SSH config file was saved to /home/user/code/python/sshgen/config
+```
+
+</p>
+</details>
 
 Copy and insert the output into your `~/.ssh/config` file. After that, you can use any of the defined aliases to SSH
 into the corresponding hosts. For example, running `ssh base` will connect you to the host with the IP address 127.0.0.1
