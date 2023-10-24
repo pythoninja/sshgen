@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from sshgen.models.metafields import MetaFieldsModel
 
@@ -11,4 +11,4 @@ class HostModel:
     ansible_host: str
     ansible_user: str
     ansible_port: int = 22
-    meta_fields: MetaFieldsModel | None = None
+    meta_fields: MetaFieldsModel = field(default_factory=MetaFieldsModel)

@@ -28,13 +28,13 @@ class SSHConfig:
         filtered_models = []
 
         for model in models:
-            is_skipped = False
-            if not (model.meta_fields and model.meta_fields.skip):
-                filtered_models.append(model)
-            else:
-                is_skipped = True
-
+            is_skipped = model.meta_fields.skip
             log.debug('Host %s should be skipped: %s', model.host, is_skipped)
+
+            if is_skipped:
+                continue
+
+            filtered_models.append(model)
 
         return filtered_models
 
@@ -48,14 +48,14 @@ class SSHConfig:
 
         log.debug('Adding SSH port %s for host %s', model.ansible_port, model.host)
 
-        if model.meta_fields:
-            if model.meta_fields.aliases:
-                log.debug('Adding aliases %s for host %s ', model.meta_fields.aliases, model.host)
-                temp = temp.replace('{{ host_alias }}', ' '.join(model.meta_fields.aliases))
-            if model.meta_fields.auth_type and model.meta_fields.auth_path:
-                log.debug('Adding custom auth methods for host %s ', model.host)
-                temp = temp.replace('{{ identification }}',
-                                    f'{model.meta_fields.auth_type} {model.meta_fields.auth_path}')
+        if model.meta_fields.aliases:
+            log.debug('Adding aliases %s for host %s ', model.meta_fields.aliases, model.host)
+            temp = temp.replace('{{ host_alias }}', ' '.join(model.meta_fields.aliases))
+
+        if model.meta_fields.auth_type and model.meta_fields.auth_path:
+            log.debug('Adding custom auth methods for host %s ', model.host)
+            temp = temp.replace('{{ identification }}',
+                                f'{model.meta_fields.auth_type} {model.meta_fields.auth_path}')
 
         fallback_auth = '\n'.join(self._get_fallback_auth())
         temp = temp.replace('{{ identification }}', fallback_auth).replace('{{ host_alias }}', '')
