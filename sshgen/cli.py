@@ -22,10 +22,11 @@ def generate_hosts_file(hosts_file: Annotated[str, typer.Option('--hosts-file', 
     Example usage: sshconf generate -o my_ssh_config
     """
 
-    hosts_file = FileUtils.as_file(file_path=hosts_file)
-    output_file = FileUtils.as_file(file_path=output)
+    hosts_file = FileUtils.get_hosts_path(file_path=hosts_file)
+    output_file = FileUtils.get_output_path(file_path=output)
 
-    AppUtils(hosts_file, output_file).generate_ssh_config()
+    sshgen = AppUtils(hosts_file, output_file)
+    sshgen.generate_ssh_config()
 
 
 def _version_callback(value: bool) -> None:

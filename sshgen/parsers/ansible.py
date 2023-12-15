@@ -13,7 +13,7 @@ class AnsibleHostsParser:
     def __init__(self, hosts_file_path: Path | None = None):
         self._yaml = YAML()
         self._default_hosts_file = 'examples/hosts.yml'
-        self._file_path: Path = hosts_file_path or FileUtils.as_file(self._default_hosts_file)
+        self._file_path: Path = hosts_file_path or FileUtils.get_hosts_path(self._default_hosts_file)
 
     def as_map(self) -> CommentedMap:
         log.debug('Loading ansible hosts file: %s', self._file_path)
