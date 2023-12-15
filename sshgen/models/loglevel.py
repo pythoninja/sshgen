@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-from enum import StrEnum, auto
+import logging
+from enum import Enum
 
 
-class LogLevel(StrEnum):
-    INFO = auto()
-    DEBUG = auto()
+class LogLevel(Enum):
+    INFO = logging.INFO
+    DEBUG = logging.DEBUG
