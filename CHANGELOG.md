@@ -2,7 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.3.0](https://github.com/pythoninja/sshgen/compare/v0.2.0..0.3.0) - 2023-10-21
+## [0.4.0](https://github.com/pythoninja/sshgen/compare/v0.3.0..0.4.0) - 2023-12-15
+
+### Refactor
+
+- Improve error message with yaml ([#82](https://github.com/pythoninja/sshgen/issues/82)) - ([5e530c0](https://github.com/pythoninja/sshgen/commit/5e530c0056fc504727288eb96c45c8b9472bc1a8))
+- Separate load and save methods ([#70](https://github.com/pythoninja/sshgen/issues/70)) - ([474f41c](https://github.com/pythoninja/sshgen/commit/474f41c8866db559e617a2f7eca0f1a75b083921))
+- Simplify generator logic ([#64](https://github.com/pythoninja/sshgen/issues/64)) - ([77968b8](https://github.com/pythoninja/sshgen/commit/77968b837f8a32bd8dc6396a2ef84054fb8c8554))
+
+### Miscellaneous Tasks
+
+- Bump poetry to 1.7.1 ([#83](https://github.com/pythoninja/sshgen/issues/83)) - ([a3db0a2](https://github.com/pythoninja/sshgen/commit/a3db0a2dc30b7efb5a00fb7451d1110910992f59))
+
+### Documentation
+
+- Add beta note ([#84](https://github.com/pythoninja/sshgen/issues/84)) - ([55f6441](https://github.com/pythoninja/sshgen/commit/55f64415a5d737912acb5b9e4ebe7b3b3a5dc8b8))
+
+## [0.3.0](https://github.com/pythoninja/sshgen/compare/v0.2.0..v0.3.0) - 2023-10-21
 
 ### Features
 
