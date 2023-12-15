@@ -16,7 +16,7 @@ class FileUtils:
         CommonUtils.check_and_exit(resolved_path.exists(),
                                    f'Ansible hosts file does not exists at {resolved_path}. Exiting...')
         CommonUtils.check_and_exit(FileUtils.is_yaml_file(resolved_path),
-                                   'Ansible hosts file is not a yaml file. Valid extensions are: yaml or yml.'
+                                   'Ansible hosts file is not a yaml file. Valid extensions are: yaml or yml. '
                                    'Exiting...')
         CommonUtils.check_and_exit(not FileUtils.is_empty(resolved_path),
                                    f'Ansible hosts file {resolved_path} is empty. Exiting...')
