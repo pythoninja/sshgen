@@ -1,5 +1,8 @@
 # sshgen
 
+> [!IMPORTANT]
+> This repository contains software that is currently in the Beta stage.
+
 SSH configuration generator based on your Ansible hosts YAML file.
 
 Current version: v0.3.0
