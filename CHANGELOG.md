@@ -2,7 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.4.0](https://github.com/pythoninja/sshgen/compare/v0.3.0..0.4.0) - 2023-12-15
+## [0.5.0](https://github.com/pythoninja/sshgen/compare/v0.4.0..0.5.0) - 2023-12-19
+
+### Features
+
+- *(cli)* Enable debug logging with env vars ([#85](https://github.com/pythoninja/sshgen/issues/85)) - ([6c5d0b2](https://github.com/pythoninja/sshgen/commit/6c5d0b27c7b86ba9b4a8743fe431d9323406a89e))
+
+### Refactor
+
+- Detect empty list of templates ([#88](https://github.com/pythoninja/sshgen/issues/88)) - ([e0cb0ed](https://github.com/pythoninja/sshgen/commit/e0cb0ed17c4bf03cea93906e7edab90852394aa8))
+
+### Documentation
+
+- Add note for debug mode to readme ([#89](https://github.com/pythoninja/sshgen/issues/89)) - ([9eda012](https://github.com/pythoninja/sshgen/commit/9eda0121d6fd45d7e9b50d37837b6718a97de957))
+
+## [0.4.0](https://github.com/pythoninja/sshgen/compare/v0.3.0..v0.4.0) - 2023-12-15
 
 ### Refactor
 
