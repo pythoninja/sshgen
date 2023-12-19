@@ -4,6 +4,7 @@ import logging
 from pathlib import Path
 
 from sshgen.models.host import HostModel
+from sshgen.utils.common import CommonUtils
 from sshgen.utils.file import FileUtils
 
 log = logging.getLogger(__name__)
@@ -67,6 +68,10 @@ class SSHConfig:
         return self.template_path.read_text()
 
     def _save_config(self, templates: list[str]) -> None:
+        CommonUtils.check_and_exit(condition=len(templates) > 0,
+                                   message='No templates found to generate. Exiting...',
+                                   exit_code=0)
+
         self._create_output_file()
         self.output_file.write_text('\n'.join(templates))
         log.info('Generated SSH config file was saved to %s', self.output_file)
