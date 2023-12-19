@@ -40,11 +40,16 @@ def _version_callback(value: bool) -> None:
 def main(
         verbose: Annotated[
             Optional[bool],
-            typer.Option('--verbose', is_eager=True, help='Switch log level to DEBUG, default is INFO.'),
+            typer.Option('--verbose',
+                         is_eager=True,
+                         envvar=['SSHGEN_VERBOSE', 'SSHGEN_DEBUG'],
+                         help='Switch log level to DEBUG, default is INFO.'),
         ] = False,
         version: Annotated[
             Optional[bool],
-            typer.Option('-v', '--version', callback=_version_callback, is_eager=True),
+            typer.Option('-v', '--version',
+                         is_eager=True,
+                         callback=_version_callback),
         ] = None,
 ) -> None:
     """
