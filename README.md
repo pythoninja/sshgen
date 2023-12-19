@@ -116,6 +116,12 @@ To display addition logs (verbose mode), add `--verbose` flag:
 sshgen --verbose generate
 ```
 
+Or use `SSHGEN_DEBUG=1` (`SSHGEN_VERBOSE=1`) environment variable (since v0.5.0):
+
+```shell
+SSHGEN_DEBUG=1 sshgen generate
+```
+
 After executing the command, you will see the following output:
 
 ```text
