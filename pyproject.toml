@@ -66,6 +66,11 @@ cmd = "git cliff --tag {new_version} --output CHANGELOG.md"
 
 [tool.ruff]
 exclude = []
+line-length = 120
+target-version = "py312"
+preview = true
+
+[tool.ruff.lint]
 select = [
     "A",    # flake8-builtins
     "B",    # flake8-bugbear
@@ -102,14 +107,11 @@ select = [
     "YTT"   # flake8-2020
 ]
 ignore = ["ANN101", "ANN204", "ARG001", "UP007"]
-line-length = 120
-target-version = "py312"
-preview = true
 
-[tool.ruff.pylint]
+[tool.ruff.lint.pylint]
 max-args = 5
 
-[tool.ruff.flake8-quotes]
+[tool.ruff.lint.flake8-quotes]
 docstring-quotes = "double"
 inline-quotes = "single"
 multiline-quotes = "single"
