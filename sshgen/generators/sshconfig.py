@@ -16,6 +16,7 @@ class SSHConfig:
         self.template_path = FileUtils.as_package_file('templates/ssh_config.template')
         self.ssh_template = self._open_template()
         self.output_file = output_file
+        self._skipped: list[HostModel] = []
 
     def generate(self) -> None:
         filtered_models: list[HostModel] = self._filter_models()
@@ -26,13 +27,14 @@ class SSHConfig:
         models = copy.deepcopy(self.raw_models)
         log.debug('Filtering hosts where _skip metafield was defined')
 
-        filtered_models = []
+        filtered_models: list[HostModel] = []
 
         for model in models:
             is_skipped = model.meta_fields.skip
             log.debug('Host %s should be skipped: %s', model.host, is_skipped)
 
             if is_skipped:
+                self._skipped.append(model)
                 continue
 
             filtered_models.append(model)
@@ -75,9 +77,17 @@ class SSHConfig:
         self._create_output_file()
         self.output_file.write_text('\n'.join(templates))
         log.info('Generated SSH config file was saved to %s', self.output_file)
+        log.debug('Skipped hosts list: %s', self._parse_skipped())
+        log.info('Total processed hosts: %d, total skipped hosts: %d', len(templates), len(self._skipped))
 
     def _create_output_file(self) -> None:
         self.output_file.touch(exist_ok=True)
+
+    def _parse_skipped(self) -> str:
+        if len(self._skipped) > 0:
+            return ', '.join([model.ansible_host for model in self._skipped])
+
+        return 'no hosts found'
 
     @staticmethod
     def _get_fallback_auth() -> list[str]:
