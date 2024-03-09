@@ -2,7 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.5.0](https://github.com/pythoninja/sshgen/compare/v0.4.0..0.5.0) - 2023-12-19
+## [unreleased]
+
+### Features
+
+- Show skipped and processed hosts in output - ([a5fdcbe](https://github.com/pythoninja/sshgen/commit/a5fdcbe810d246ac0e9af97ed901b50da95ace2f))
+
+### Development
+
+- *(dev)* Change ruff linter and formatter rules - ([783ba11](https://github.com/pythoninja/sshgen/commit/783ba115bce9c416f25c5b691e6d949e41173de5))
+- *(dev)* Update python to 3.12 - ([6c9166a](https://github.com/pythoninja/sshgen/commit/6c9166a25bea7ab82451a00be17333acd8b346fc))
+- *(dev)* Update to ruff 0.3.1 - ([f05ee2e](https://github.com/pythoninja/sshgen/commit/f05ee2e1ce926dd182106d1e1472160561ee3240))
+
+## [0.5.0](https://github.com/pythoninja/sshgen/compare/v0.4.0..v0.5.0) - 2023-12-19
 
 ### Features
 
