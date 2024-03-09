@@ -97,6 +97,7 @@ select = [
     "PIE",  # flake8-pie
     "PTH",  # flake8-use-pathlib
     "PERF", # Perflint
+    "RUF",  # ruff-specific
     "SLF",  # flake8-self
     "SIM",  # flake8-simplify
     "T20",  # flake8-print
