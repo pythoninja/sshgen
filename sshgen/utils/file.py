@@ -13,13 +13,16 @@ class FileUtils:
     def get_hosts_path(file_path: str) -> Path:
         resolved_path = FileUtils.resolve_path(file_path)
 
-        CommonUtils.check_and_exit(resolved_path.exists(),
-                                   f'Ansible hosts file does not exists at {resolved_path}. Exiting...')
-        CommonUtils.check_and_exit(FileUtils.is_yaml_file(resolved_path),
-                                   'Ansible hosts file is not a yaml file. Valid extensions are: yaml or yml. '
-                                   'Exiting...')
-        CommonUtils.check_and_exit(not FileUtils.is_empty(resolved_path),
-                                   f'Ansible hosts file {resolved_path} is empty. Exiting...')
+        CommonUtils.check_and_exit(
+            resolved_path.exists(), f"Ansible hosts file does not exists at {resolved_path}. Exiting..."
+        )
+        CommonUtils.check_and_exit(
+            FileUtils.is_yaml_file(resolved_path),
+            "Ansible hosts file is not a yaml file. Valid extensions are: yaml or yml. Exiting...",
+        )
+        CommonUtils.check_and_exit(
+            not FileUtils.is_empty(resolved_path), f"Ansible hosts file {resolved_path} is empty. Exiting..."
+        )
 
         return resolved_path
 
@@ -28,7 +31,7 @@ class FileUtils:
         resolved_path = FileUtils.resolve_path(file_path)
 
         if not resolved_path.exists():
-            log.debug('Path %s is not exists, creating required directories', resolved_path)
+            log.debug("Path %s is not exists, creating required directories", resolved_path)
             FileUtils.create_file(resolved_path)
 
         return resolved_path
@@ -47,7 +50,7 @@ class FileUtils:
 
     @staticmethod
     def is_yaml_file(file_path: Path) -> bool:
-        return file_path.suffix in {'.yml', '.yaml'}
+        return file_path.suffix in {".yml", ".yaml"}
 
     @staticmethod
     def is_empty(file_path: Path) -> bool:
@@ -60,5 +63,5 @@ class FileUtils:
                 file_path.parent.mkdir(parents=True, exist_ok=True)
                 file_path.touch(exist_ok=True)
             except OSError as e:
-                log.exception('Failed to create file or directory: %s, reason: %s', file_path, e.strerror)
+                log.exception("Failed to create file or directory: %s, reason: %s", file_path, e.strerror)
                 sys.exit(1)

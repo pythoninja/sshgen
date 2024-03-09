@@ -11,13 +11,13 @@ log = logging.getLogger(__name__)
 
 def run() -> None:
     init_logger(level=LogLevel.DEBUG)
-    hosts_file = './examples/hosts.yml'
-    config_file = './config'
+    hosts_file = "./examples/hosts.yml"
+    config_file = "./config"
 
-    log.info('Starting sshgen with pre-defined settings')
-    log.debug('Debug mode is ON')
-    log.debug('Reading hosts from %s', hosts_file)
-    log.debug('Saving generated config to %s', config_file)
+    log.info("Starting sshgen with pre-defined settings")
+    log.debug("Debug mode is ON")
+    log.debug("Reading hosts from %s", hosts_file)
+    log.debug("Saving generated config to %s", config_file)
 
     hosts_file = FileUtils.get_hosts_path(file_path=hosts_file)
     output_file = FileUtils.get_output_path(file_path=config_file)
@@ -26,5 +26,5 @@ def run() -> None:
     sshgen.generate_ssh_config()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()
