@@ -48,7 +48,7 @@ class SSHConfig:
             .replace("{{ hostname }}", model.ansible_host)
             .replace("{{ host_comment }}", model.host_group)
             .replace("{{ ssh_user }}", model.ansible_user)
-            .replace("{{ port }}", f"Port {str(model.ansible_port)}")
+            .replace("{{ port }}", f"Port {model.ansible_port!s}")
         )
 
         log.debug("Adding SSH port %s for host %s", model.ansible_port, model.host)
