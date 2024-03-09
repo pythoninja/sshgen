@@ -21,6 +21,7 @@ typer = "^0.9.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "*"
+pre-commit = "^3.6.2"
 
 [build-system]
 requires = ["poetry-core"]
