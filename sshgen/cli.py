@@ -12,9 +12,11 @@ from sshgen.utils.file import FileUtils
 app = typer.Typer(no_args_is_help=True)
 
 
-@app.command('generate')
-def generate_hosts_file(hosts_file: Annotated[str, typer.Option('--hosts-file', '-h')] = './hosts.yml',
-                        output: Annotated[str, typer.Option('--output', '-o')] = './config') -> None:
+@app.command("generate")
+def generate_hosts_file(
+    hosts_file: Annotated[str, typer.Option("--hosts-file", "-h")] = "./hosts.yml",
+    output: Annotated[str, typer.Option("--output", "-o")] = "./config",
+) -> None:
     """
     Command to generate SSH configuration file.
     By default, it uses file hosts.yml placed in your working directory and outputs to the file named "config"
@@ -31,26 +33,26 @@ def generate_hosts_file(hosts_file: Annotated[str, typer.Option('--hosts-file', 
 
 def _version_callback(value: bool) -> None:
     if value:
-        typer.echo(f'{__app_name__} v{__version__}')
+        typer.echo(f"{__app_name__} v{__version__}")
         raise typer.Exit()
 
 
 # noinspection PyUnusedLocal
 @app.callback()
 def main(
-        verbose: Annotated[
-            Optional[bool],
-            typer.Option('--verbose',
-                         is_eager=True,
-                         envvar=['SSHGEN_VERBOSE', 'SSHGEN_DEBUG'],
-                         help='Switch log level to DEBUG, default is INFO.'),
-        ] = False,
-        version: Annotated[
-            Optional[bool],
-            typer.Option('-v', '--version',
-                         is_eager=True,
-                         callback=_version_callback),
-        ] = None,
+    verbose: Annotated[
+        Optional[bool],
+        typer.Option(
+            "--verbose",
+            is_eager=True,
+            envvar=["SSHGEN_VERBOSE", "SSHGEN_DEBUG"],
+            help="Switch log level to DEBUG, default is INFO.",
+        ),
+    ] = False,
+    version: Annotated[
+        Optional[bool],
+        typer.Option("-v", "--version", is_eager=True, callback=_version_callback),
+    ] = None,
 ) -> None:
     """
     sshgen generates SSH configuration file based on an Ansible hosts file.
@@ -61,5 +63,5 @@ def main(
         init_logger(level=LogLevel.INFO)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app()

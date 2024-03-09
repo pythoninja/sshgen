@@ -15,22 +15,22 @@ class MapToHost:
         host_models = []
 
         for host_group, hosts in parsed_hosts.items():
-            for host, host_details in hosts['hosts'].items():
+            for host, host_details in hosts["hosts"].items():
                 model = HostModel(
                     host=host,
                     host_group=host_group,
-                    ansible_host=host_details['ansible_host'],
-                    ansible_user=host_details['ansible_user'],
+                    ansible_host=host_details["ansible_host"],
+                    ansible_user=host_details["ansible_user"],
                 )
 
-                if host_details.get('ansible_port'):
-                    model.ansible_port = host_details['ansible_port']
+                if host_details.get("ansible_port"):
+                    model.ansible_port = host_details["ansible_port"]
 
-                meta = host_details.get('_meta', {})
-                auth_type = meta.get('_auth_type')
-                auth_path = meta.get('_auth_path')
-                aliases = meta.get('_aliases')
-                skip = meta.get('_skip', False)  # Fallback to False if no meta fields are defined
+                meta = host_details.get("_meta", {})
+                auth_type = meta.get("_auth_type")
+                auth_path = meta.get("_auth_path")
+                aliases = meta.get("_aliases")
+                skip = meta.get("_skip", False)  # Fallback to False if no meta fields are defined
 
                 if any(isinstance(field, str | list) for field in (auth_type, auth_path, aliases)):
                     model.meta_fields = MetaFieldsModel(auth_type, auth_path, aliases)
@@ -39,6 +39,6 @@ class MapToHost:
 
                 host_models.append(model)
 
-        log.debug('Total hosts found (include skipped): %s', len(host_models))
+        log.debug("Total hosts found (include skipped): %s", len(host_models))
 
         return host_models

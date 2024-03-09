@@ -10,5 +10,5 @@ class CommonUtils:
     def check_and_exit(condition: bool, message: str, exit_code: int = 1) -> None:
         if not condition:
             log.error(message)
-            log.debug('Exiting with code: %s', exit_code)
+            log.debug("Exiting with code: %s", exit_code)
             sys.exit(exit_code)
