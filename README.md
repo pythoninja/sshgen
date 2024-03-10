@@ -23,7 +23,7 @@ Current version: v0.5.0
 
 ## Features
 
-1. Generates a `config` file to merge with your existing SSH configuration.
+1. Generates a `config` file to merge with your existing SSH configuration or include as a separate `.conf` file (since v0.6.0).
 2. Custom configuration for ssh-agent.
 3. Custom SSH aliases for quick connections.
 4. Skip selected hosts from results file.
@@ -125,7 +125,8 @@ SSHGEN_DEBUG=1 sshgen generate
 After executing the command, you will see the following output:
 
 ```text
-[INFO] - Generated SSH config file was saved to /my_dir/config
+[2024-03-10 10:00:00] [INFO] - Generated SSH config file was saved to /my_dir/config
+[2024-03-10 10:00:00] [INFO] - Total processed hosts: 3, total skipped hosts: 1
 ```
 
 Check the file contents `cat /my_dir/config`:
@@ -151,37 +152,52 @@ Host host4 postgres-server # group2
     IdentityAgent ~/.1password/agent.sock
 ```
 
-If you ran using verbose mode, you should see additional information:
+If you run using verbose mode, you should see additional information:
 
 <details><summary>Verbose output example</summary>
 <p>
 
 ```text
-[2023-10-21 17:53:31] [DEBUG] - Loading ansible hosts file: /home/user/code/python/sshgen/examples/hosts.yml
-[2023-10-21 17:53:31] [DEBUG] - Total hosts found (include skipped): 4
-[2023-10-21 17:53:31] [DEBUG] - Using template file /home/user/code/python/sshgen/sshgen/templates/ssh_config.template to generate ssh config
-[2023-10-21 17:53:31] [DEBUG] - Filtering hosts where _skip metafield was defined
-[2023-10-21 17:53:31] [DEBUG] - Host host1 should be skipped: False
-[2023-10-21 17:53:31] [DEBUG] - Host host2 should be skipped: True
-[2023-10-21 17:53:31] [DEBUG] - Host host3 should be skipped: False
-[2023-10-21 17:53:31] [DEBUG] - Host host4 should be skipped: False
-[2023-10-21 17:53:31] [DEBUG] - Processing host1 from group group1
-[2023-10-21 17:53:31] [DEBUG] - Adding SSH port 22 for host host1
-[2023-10-21 17:53:31] [DEBUG] - Adding aliases ['base', 'another-alias'] for host host1
-[2023-10-21 17:53:31] [DEBUG] - Adding custom auth methods for host host1
-[2023-10-21 17:53:31] [DEBUG] - Processing host3 from group group2
-[2023-10-21 17:53:31] [DEBUG] - Adding SSH port 19222 for host host3
-[2023-10-21 17:53:31] [DEBUG] - Processing host4 from group group2
-[2023-10-21 17:53:31] [DEBUG] - Adding SSH port 22 for host host4
-[2023-10-21 17:53:31] [DEBUG] - Adding aliases ['postgres-server'] for host host4
-[2023-10-21 17:53:31] [DEBUG] - Adding custom auth methods for host host4
-[2023-10-21 17:53:31] [INFO] - Generated SSH config file was saved to /home/user/code/python/sshgen/config
+[2024-03-10 10:00:00] [DEBUG] - Loading ansible hosts file: /home/user/code/python/sshgen/examples/hosts.yml
+[2024-03-10 10:00:00] [DEBUG] - Total hosts found (include skipped): 4
+[2024-03-10 10:00:00] [DEBUG] - Using template file /home/user/code/python/sshgen/sshgen/templates/ssh_config.template to generate ssh config
+[2024-03-10 10:00:00] [DEBUG] - Filtering hosts where _skip metafield was defined
+[2024-03-10 10:00:00] [DEBUG] - Host host1 should be skipped: False
+[2024-03-10 10:00:00] [DEBUG] - Host host2 should be skipped: True
+[2024-03-10 10:00:00] [DEBUG] - Host host3 should be skipped: False
+[2024-03-10 10:00:00] [DEBUG] - Host host4 should be skipped: False
+[2024-03-10 10:00:00] [DEBUG] - Processing host1 from group group1
+[2024-03-10 10:00:00] [DEBUG] - Adding SSH port 22 for host host1
+[2024-03-10 10:00:00] [DEBUG] - Adding aliases ['base', 'another-alias'] for host host1
+[2024-03-10 10:00:00] [DEBUG] - Adding custom auth methods for host host1
+[2024-03-10 10:00:00] [DEBUG] - Processing host3 from group group2
+[2024-03-10 10:00:00] [DEBUG] - Adding SSH port 19222 for host host3
+[2024-03-10 10:00:00] [DEBUG] - Processing host4 from group group2
+[2024-03-10 10:00:00] [DEBUG] - Adding SSH port 22 for host host4
+[2024-03-10 10:00:00] [DEBUG] - Adding aliases ['base', 'another-alias'] for host host4
+[2024-03-10 10:00:00] [DEBUG] - Adding custom auth methods for host host4
+[2024-03-10 10:00:00] [INFO] - Generated SSH config file was saved to /home/user/code/python/sshgen/config
+[2024-03-10 10:00:00] [DEBUG] - Skipped hosts list: 127.0.0.2
+[2024-03-10 10:00:00] [INFO] - Total processed hosts: 3, total skipped hosts: 1
 ```
 
 </p>
 </details>
 
-Copy and insert the output into your `~/.ssh/config` file. After that, you can use any of the defined aliases to SSH
+There are two ways to use the generated file:
+1. Copy and insert the output into your `~/.ssh/config` file.
+2. Copy file to the conf directory, e.g. `~/.ssh/config.d/00-custom.conf` (if it's not exist, create one).
+Edit your `~/.ssh/config` and add `Include` directive:
+
+```
+#### Custom configuration
+
+Include ~/.ssh/config.d/*.conf
+
+#### End of custom configuration
+```
+
+After that, you can use any of the defined aliases to SSH
 into the corresponding hosts. For example, running `ssh base` will connect you to the host with the IP address 127.0.0.1
 as the root user and utilizing 1password as your SSH agent.
 
