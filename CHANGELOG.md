@@ -8,11 +8,25 @@ All notable changes to this project will be documented in this file.
 
 - Show skipped and processed hosts in output - ([a5fdcbe](https://github.com/pythoninja/sshgen/commit/a5fdcbe810d246ac0e9af97ed901b50da95ace2f))
 
+### Refactor
+
+- Change create and writing methods - ([332c63c](https://github.com/pythoninja/sshgen/commit/332c63c547299e1db246b81a205d76fc3ee6f280))
+
 ### Development
 
+- *(dev)* Ignore test files - ([9ac9b86](https://github.com/pythoninja/sshgen/commit/9ac9b8661e5e6956fdc97e01b34b106be71d7e6c))
+- *(dev)* Add justfile - ([6b5541e](https://github.com/pythoninja/sshgen/commit/6b5541ebb27bfaaa5b2d5130282358119bbcd35f))
+- *(dev)* Enable ruff-specific rules for linter - ([98b901c](https://github.com/pythoninja/sshgen/commit/98b901c837a130007f9c91ab4e0f1642559b728d))
+- *(dev)* Format the code on pre-commit - ([378e9c2](https://github.com/pythoninja/sshgen/commit/378e9c27cefd51677ab8636b69a0b0c10a7bf7ce))
 - *(dev)* Change ruff linter and formatter rules - ([783ba11](https://github.com/pythoninja/sshgen/commit/783ba115bce9c416f25c5b691e6d949e41173de5))
 - *(dev)* Update python to 3.12 - ([6c9166a](https://github.com/pythoninja/sshgen/commit/6c9166a25bea7ab82451a00be17333acd8b346fc))
 - *(dev)* Update to ruff 0.3.1 - ([f05ee2e](https://github.com/pythoninja/sshgen/commit/f05ee2e1ce926dd182106d1e1472160561ee3240))
+
+### Documentation
+
+- *(changelog)* Update release notes - ([f6d1323](https://github.com/pythoninja/sshgen/commit/f6d1323c767b93d1034bdea17a73e783fd7a50e8))
+- Update usage and output example - ([6a5dda4](https://github.com/pythoninja/sshgen/commit/6a5dda4b631b4830cc2e39db4132e3849e9d5a24))
+- Update example usage in cli - ([c20477a](https://github.com/pythoninja/sshgen/commit/c20477a55c9b67e42ede4085828a1288ee6aa777))
 
 ## [0.5.0](https://github.com/pythoninja/sshgen/compare/v0.4.0..v0.5.0) - 2023-12-19
 
