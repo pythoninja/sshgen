@@ -19,9 +19,8 @@ def generate_hosts_file(
 ) -> None:
     """
     Command to generate SSH configuration file.
-    By default, it uses file hosts.yml placed in your working directory and outputs to the file named "config"
-
-    Example usage: sshconf generate -o my_ssh_config
+    By default, it uses file hosts.yml placed in your working directory and outputs to the file named "config".
+    Example usage: sshgen generate -o my_ssh_config
     """
 
     hosts_file = FileUtils.get_hosts_path(file_path=hosts_file)
