@@ -28,13 +28,7 @@ class FileUtils:
 
     @staticmethod
     def get_output_path(file_path: str) -> Path:
-        resolved_path = FileUtils.resolve_path(file_path)
-
-        if not resolved_path.exists():
-            log.debug("Path %s is not exists, creating required directories", resolved_path)
-            FileUtils.create_file(resolved_path)
-
-        return resolved_path
+        return FileUtils.resolve_path(file_path)
 
     @staticmethod
     def as_package_file(file_path: str) -> Path:
@@ -58,10 +52,20 @@ class FileUtils:
 
     @staticmethod
     def create_file(file_path: Path) -> None:
-        if not file_path.is_file():
-            try:
-                file_path.parent.mkdir(parents=True, exist_ok=True)
-                file_path.touch(exist_ok=True)
-            except OSError as e:
-                log.exception("Failed to create file or directory: %s, reason: %s", file_path, e.strerror)
-                sys.exit(1)
+        if not file_path.exists():
+            log.debug("Path %s is not exists, trying to create required folders and file", file_path)
+
+        try:
+            file_path.parent.mkdir(parents=True, exist_ok=True)
+            file_path.touch(exist_ok=True)
+        except OSError as e:
+            log.exception("Failed to create file or directory: %s, reason: %s", file_path, e.strerror)
+            sys.exit(1)
+
+    @staticmethod
+    def write_text(file_path: Path, data: str) -> None:
+        try:
+            file_path.write_text(data)
+        except OSError as e:
+            log.exception("Failed to create file or directory: %s, reason: %s", file_path, e.strerror)
+            sys.exit(1)
