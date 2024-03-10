@@ -75,14 +75,12 @@ class SSHConfig:
             condition=len(templates) > 0, message="No templates found to generate. Exiting...", exit_code=0
         )
 
-        self._create_output_file()
-        self.output_file.write_text("\n".join(templates))
+        FileUtils.create_file(self.output_file)
+        FileUtils.write_text(file_path=self.output_file, data="\n".join(templates))
+
         log.info("Generated SSH config file was saved to %s", self.output_file)
         log.debug("Skipped hosts list: %s", self._parse_skipped())
         log.info("Total processed hosts: %d, total skipped hosts: %d", len(templates), len(self._skipped))
-
-    def _create_output_file(self) -> None:
-        self.output_file.touch(exist_ok=True)
 
     def _parse_skipped(self) -> str:
         if len(self._skipped) > 0:
