@@ -54,7 +54,7 @@ search = "sshgen@v"
 
 [[tool.tbump.file]]
 src = "sshgen/__init__.py"
-search = "__version__ = '{current_version}'"
+search = "__version__ = \"{current_version}\""
 
 [[tool.tbump.before_commit]]
 name = "Bump poetry"
