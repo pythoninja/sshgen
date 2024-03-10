@@ -9,3 +9,7 @@ master-pull:
 
 clear-env:
     rm -rf {{justfile_directory()}}/.venv
+
+check:
+    poetry run ruff check {{justfile_directory()}}/sshgen
+    poetry run ruff format {{justfile_directory()}}/sshgen
