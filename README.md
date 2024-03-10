@@ -187,7 +187,7 @@ If you run using verbose mode, you should see additional information:
 There are two ways to use the generated file:
 1. Copy and insert the output into your `~/.ssh/config` file.
 2. Copy file to the conf directory, e.g. `~/.ssh/config.d/00-custom.conf` (if it's not exist, create one).
-Edit your `~/.ssh/config` and add `Include` directive:
+Edit your `~/.ssh/config` and add `Include` directive **to the top**:
 
 ```
 #### Custom configuration
