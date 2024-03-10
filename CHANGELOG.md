@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.6.0](https://github.com/pythoninja/sshgen/compare/v0.5.0..0.6.0) - 2024-03-10
+## [0.6.0](https://github.com/pythoninja/sshgen/compare/v0.5.0..v0.6.0) - 2024-03-10
 
 ### Features
 
@@ -26,8 +26,6 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 
-- *(changelog)* Update release notes - ([25491c1](https://github.com/pythoninja/sshgen/commit/25491c1c3f31a3d2be479df258ff565f653a1562))
-- *(changelog)* Update release notes - ([f6d1323](https://github.com/pythoninja/sshgen/commit/f6d1323c767b93d1034bdea17a73e783fd7a50e8))
 - Clarify `Include` directive positioning - ([e1258e2](https://github.com/pythoninja/sshgen/commit/e1258e23d80b8be581ecc9d31105dd2b9b5a251b))
 - Update usage and output example - ([6a5dda4](https://github.com/pythoninja/sshgen/commit/6a5dda4b631b4830cc2e39db4132e3849e9d5a24))
 - Update example usage in cli - ([c20477a](https://github.com/pythoninja/sshgen/commit/c20477a55c9b67e42ede4085828a1288ee6aa777))
@@ -117,7 +115,6 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 
-- *(readme)* Update install instructions - ([5abddbc](https://github.com/pythoninja/sshgen/commit/5abddbc37eedeb5d17c89afbd73ed9ebd5a5634a))
 - Add toc to readme - ([90636a6](https://github.com/pythoninja/sshgen/commit/90636a697a605cf357a818ec282a3f6da38d224d))
 
 ## [0.1.1](https://github.com/pythoninja/sshgen/compare/v0.1.0..v0.1.1) - 2023-06-22
