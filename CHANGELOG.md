@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [0.6.0](https://github.com/pythoninja/sshgen/compare/v0.5.0..0.6.0) - 2024-03-10
 
 ### Features
 
@@ -14,6 +14,8 @@ All notable changes to this project will be documented in this file.
 
 ### Development
 
+- *(dev)* Add just check - ([ef9280d](https://github.com/pythoninja/sshgen/commit/ef9280d993e8f8689de4a0bba28d57566915c998))
+- *(dev)* Fix tbump configuration - ([0561adf](https://github.com/pythoninja/sshgen/commit/0561adfd3c997efed4b5ab6284ac858dc4ce788c))
 - *(dev)* Ignore test files - ([9ac9b86](https://github.com/pythoninja/sshgen/commit/9ac9b8661e5e6956fdc97e01b34b106be71d7e6c))
 - *(dev)* Add justfile - ([6b5541e](https://github.com/pythoninja/sshgen/commit/6b5541ebb27bfaaa5b2d5130282358119bbcd35f))
 - *(dev)* Enable ruff-specific rules for linter - ([98b901c](https://github.com/pythoninja/sshgen/commit/98b901c837a130007f9c91ab4e0f1642559b728d))
@@ -24,7 +26,9 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 
+- *(changelog)* Update release notes - ([25491c1](https://github.com/pythoninja/sshgen/commit/25491c1c3f31a3d2be479df258ff565f653a1562))
 - *(changelog)* Update release notes - ([f6d1323](https://github.com/pythoninja/sshgen/commit/f6d1323c767b93d1034bdea17a73e783fd7a50e8))
+- Clarify `Include` directive positioning - ([e1258e2](https://github.com/pythoninja/sshgen/commit/e1258e23d80b8be581ecc9d31105dd2b9b5a251b))
 - Update usage and output example - ([6a5dda4](https://github.com/pythoninja/sshgen/commit/6a5dda4b631b4830cc2e39db4132e3849e9d5a24))
 - Update example usage in cli - ([c20477a](https://github.com/pythoninja/sshgen/commit/c20477a55c9b67e42ede4085828a1288ee6aa777))
 
