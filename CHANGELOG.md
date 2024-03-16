@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.0](https://github.com/pythoninja/sshgen/compare/v0.6.0..0.7.0) - 2024-03-16
+
+### Features
+
+- *(cli)* Migrate to cyclopts - ([cca5053](https://github.com/pythoninja/sshgen/commit/cca5053c34508ef0bcb78e17dc2ac9bce4050368))
+
+### Development
+
+- *(dev)* Update to ruff 0.3.3 - ([c33b1bf](https://github.com/pythoninja/sshgen/commit/c33b1bf2e96a454b43d2855cb83eb8afea5e65af))
+- *(dev)* Remove changelog entries from generator - ([0a79d78](https://github.com/pythoninja/sshgen/commit/0a79d782cc6c65596c1f56c93ee58ceb47621fdc))
+
 ## [0.6.0](https://github.com/pythoninja/sshgen/compare/v0.5.0..v0.6.0) - 2024-03-10
 
 ### Features
