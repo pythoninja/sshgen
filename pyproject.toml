@@ -12,7 +12,7 @@ keywords = ["ssh", "config", "ansible", "cli", "generator"]
 "Changelog" = "https://github.com/pythoninja/sshgen/blob/master/CHANGELOG.md"
 
 [tool.poetry.scripts]
-sshgen = "sshgen.cli:app"
+sshgen = "sshgen.cli:app.meta"
 
 [tool.poetry.dependencies]
 python = "^3.12"
