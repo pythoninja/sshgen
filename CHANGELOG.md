@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.7.0](https://github.com/pythoninja/sshgen/compare/v0.6.0..0.7.0) - 2024-03-16
+## [0.7.1](https://github.com/pythoninja/sshgen/compare/v0.7.0..0.7.1) - 2024-03-18
+
+### Bug Fixes
+
+- *(cli)* Fix script entrypoint - ([02919ee](https://github.com/pythoninja/sshgen/commit/02919eeddbf87c53461d8b9175c41535e263420a))
+
+## [0.7.0](https://github.com/pythoninja/sshgen/compare/v0.6.0..v0.7.0) - 2024-03-16
 
 ### Features
 
