@@ -2,7 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.7.1](https://github.com/pythoninja/sshgen/compare/v0.7.0..0.7.1) - 2024-03-18
+## [0.7.2](https://github.com/pythoninja/sshgen/compare/v0.7.1..0.7.2) - 2024-07-09
+
+### Miscellaneous Tasks
+
+- Bump poetry to 1.8.3 - ([be330da](https://github.com/pythoninja/sshgen/commit/be330da185b4262b7dc80ac105d33240e9cc6383))
+- Fix linter action for ruff 0.5.x - ([09f5326](https://github.com/pythoninja/sshgen/commit/09f5326d11f38354f02730409666ee0f36eb3006))
+
+## [0.7.1](https://github.com/pythoninja/sshgen/compare/v0.7.0..v0.7.1) - 2024-03-18
 
 ### Bug Fixes
 
