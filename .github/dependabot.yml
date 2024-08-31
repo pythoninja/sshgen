@@ -4,8 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    labels: ["type: dev-dependency"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
+    labels: ["type: github-actions"]
