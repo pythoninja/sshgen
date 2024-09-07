@@ -56,6 +56,8 @@ class SSHConfig:
         if model.meta_fields.aliases:
             log.debug("Adding aliases %s for host %s ", model.meta_fields.aliases, model.host)
             temp = temp.replace("{{ host_alias }}", " ".join(model.meta_fields.aliases))
+        else:
+            temp = temp.replace("{{ host_alias }} #", "#")
 
         if model.meta_fields.auth_type and model.meta_fields.auth_path:
             log.debug("Adding custom auth methods for host %s ", model.host)
