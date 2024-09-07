@@ -16,15 +16,18 @@ class MapToHost:
 
         for host_group, hosts in parsed_hosts.items():
             for host, host_details in hosts["hosts"].items():
+                ansible_host = host_details.get("ansible_host").strip()
+                ansible_user = host_details.get("ansible_user").strip()
+
                 model = HostModel(
                     host=host,
                     host_group=host_group,
-                    ansible_host=host_details["ansible_host"],
-                    ansible_user=host_details["ansible_user"],
+                    ansible_host=ansible_host,
+                    ansible_user=ansible_user,
                 )
 
                 if host_details.get("ansible_port"):
-                    model.ansible_port = host_details["ansible_port"]
+                    model.ansible_port = host_details.get("ansible_port")
 
                 meta = host_details.get("_meta", {})
                 auth_type = meta.get("_auth_type")
@@ -47,7 +50,8 @@ class MapToHost:
                             )
                             continue
 
-                        alias_count_map[alias] = alias_count_map.get(alias, 0) + 1
+                        alias_stripped = alias.strip()
+                        alias_count_map[alias_stripped] = alias_count_map.get(alias, 0) + 1
 
                     log.debug("Aliases found for host %s in group %s: %s", host, host_group, alias_count_map)
 
