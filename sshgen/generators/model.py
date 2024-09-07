@@ -37,6 +37,27 @@ class MapToHost:
 
                 model.meta_fields.skip = skip
 
+                if model.meta_fields.aliases:
+                    alias_count_map: dict[str, int] = {}
+
+                    for alias in model.meta_fields.aliases:
+                        if alias == host:
+                            log.warning(
+                                "Host %s and alias %s are equal to each other. Skip alias processing.", host, alias
+                            )
+                            continue
+
+                        alias_count_map[alias] = alias_count_map.get(alias, 0) + 1
+
+                    log.debug("Aliases found for host %s in group %s: %s", host, host_group, alias_count_map)
+
+                    duplicates = [alias for alias, count in alias_count_map.items() if count > 1]
+
+                    if duplicates:
+                        log.warning("Duplicated aliases %s found for host: %s", duplicates, model.host)
+
+                    model.meta_fields.aliases = list(alias_count_map.keys())
+
                 host_models.append(model)
 
         log.debug("Total hosts found (include skipped): %s", len(host_models))
