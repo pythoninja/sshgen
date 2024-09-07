@@ -30,7 +30,7 @@ class MapToHost:
                 auth_type = meta.get("_auth_type")
                 auth_path = meta.get("_auth_path")
                 aliases = meta.get("_aliases")
-                skip = meta.get("_skip", False)  # Fallback to False if no meta fields are defined
+                skip = meta.get("_skip", False)  # Fallback to False if no 'skip' field found
 
                 if any(isinstance(field, str | list) for field in (auth_type, auth_path, aliases)):
                     model.meta_fields = MetaFieldsModel(auth_type, auth_path, aliases)
