@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.0](https://github.com/pythoninja/sshgen/compare/v0.7.3..0.8.0) - 2024-09-07
+
+### Features
+
+- Warn on duplicate alias for host - ([ee452b5](https://github.com/pythoninja/sshgen/commit/ee452b589eb7055ffe5c0543b45bcd0658664510))
+
+### Bug Fixes
+
+- Strip whitespaces on host, user and aliases - ([edce762](https://github.com/pythoninja/sshgen/commit/edce7623ca8453a74aa52e7b2c92962dd2bbc331))
+- No whitespace if no aliases set for host - ([3f3ed69](https://github.com/pythoninja/sshgen/commit/3f3ed697db9fb9ab80be3dcf3e76242c20e0c5d2))
+
+### Miscellaneous Tasks
+
+- Update example hosts.yml - ([b48f4ed](https://github.com/pythoninja/sshgen/commit/b48f4ede98ee7059f10df1917bfb8f488969af01))
+- Fix typo - ([d294ea9](https://github.com/pythoninja/sshgen/commit/d294ea9ca13a000a14fc02b036d2922a97bff74d))
+- Add label to dependabot pull requests - ([780397c](https://github.com/pythoninja/sshgen/commit/780397cdb3b4e8f873359c0721513c29c5030536))
+
 ## [0.7.2](https://github.com/pythoninja/sshgen/compare/v0.7.1..v0.7.2) - 2024-07-09
 
 ### Miscellaneous Tasks
