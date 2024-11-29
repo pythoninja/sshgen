@@ -32,13 +32,13 @@ files = [
 
 [[package]]
 name = "cyclopts"
-version = "2.9.9"
+version = "3.1.2"
 description = ""
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "cyclopts-2.9.9-py3-none-any.whl", hash = "sha256:d0ce956c70f3070e5bc16824ecb5ebba155be45ef4aadbb78ac4753dd99367e3"},
-    {file = "cyclopts-2.9.9.tar.gz", hash = "sha256:11d7bb59be253329ff49a1b9a634676c7ae708605d4975090783b99d081c1a0b"},
+    {file = "cyclopts-3.1.2-py3-none-any.whl", hash = "sha256:35bcb3265a0410d431684cfae116992999f15cd48acc1e72d3895f5041808f55"},
+    {file = "cyclopts-3.1.2.tar.gz", hash = "sha256:b3bd3ae44a8251b1b7979b619196b10c219522023911c18c823ceedc3d372130"},
 ]
 
 [package.dependencies]
@@ -46,7 +46,6 @@ attrs = ">=23.1.0"
 docstring-parser = {version = ">=0.15", markers = "python_version < \"4.0\""}
 rich = ">=13.6.0"
 rich-rst = ">=1.3.1,<2.0.0"
-typing-extensions = {version = ">=4.8.0", markers = "python_full_version >= \"3.8.0\" and python_full_version < \"4.0.0\""}
 
 [package.extras]
 toml = ["tomli (>=2.0.0)"]
@@ -425,17 +424,6 @@ docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "pygments
 testing = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "importlib-metadata", "ini2toml[lite] (>=0.14)", "jaraco.develop (>=7.21)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "mypy (==1.9)", "packaging (>=23.2)", "pip (>=19.1)", "pyproject-hooks (!=1.1)", "pytest (>=6,!=8.1.1)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-home (>=0.5)", "pytest-mypy", "pytest-perf", "pytest-ruff (>=0.2.1)", "pytest-subprocess", "pytest-timeout", "pytest-xdist (>=3)", "tomli", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel"]
 
 [[package]]
-name = "typing-extensions"
-version = "4.10.0"
-description = "Backported and Experimental Type Hints for Python 3.8+"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "typing_extensions-4.10.0-py3-none-any.whl", hash = "sha256:69b1a937c3a517342112fb4c6df7e72fc39a38e7891a5730ed4985b5214b5475"},
-    {file = "typing_extensions-4.10.0.tar.gz", hash = "sha256:b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"},
-]
-
-[[package]]
 name = "virtualenv"
 version = "20.25.1"
 description = "Virtual Python Environment builder"
@@ -458,4 +446,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "8a093b420e35cb66584418305dda4658583b40b31ad5e164a36d9213fd389751"
+content-hash = "bb7e6b8c2ffd9a950b93e663ef30a550bc7b45e26d3286d4256fedeee3e6eb97"
