@@ -10,20 +10,28 @@ log = logging.getLogger(__name__)
 
 
 class MapToHost:
+    # Improve the method to reduce complexity. See: https://www.flake8rules.com/rules/C901.html
     @staticmethod
     def convert(parsed_hosts: CommentedMap) -> list[HostModel]:
         host_models = []
 
         for host_group, hosts in parsed_hosts.items():
             for host, host_details in hosts["hosts"].items():
-                ansible_host = host_details.get("ansible_host").strip()
-                ansible_user = host_details.get("ansible_user").strip()
+                ansible_host = host_details.get("ansible_host")
+                ansible_user = host_details.get("ansible_user", "root")  # Fallback to `root` user if field not found
+
+                if ansible_host is None:
+                    log.warning(
+                        "Host %s in group %s must contain ansible_host. Skip host processing.", host, host_group
+                    )
+                    log.debug("Host %s in group %s will not be counted in the total skipped hosts.", host, host_group)
+                    continue
 
                 model = HostModel(
                     host=host,
                     host_group=host_group,
-                    ansible_host=ansible_host,
-                    ansible_user=ansible_user,
+                    ansible_host=ansible_host.strip(),
+                    ansible_user=ansible_user.strip(),
                 )
 
                 if host_details.get("ansible_port"):
