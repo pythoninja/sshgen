@@ -1,4 +1,6 @@
 name: Linter
+permissions:
+  contents: read
 
 on:
   push:
@@ -19,7 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: chartboost/ruff-action@v1
+      - uses: astral-sh/ruff-action@31a518504640beb4897d0b9f9e50a2a9196e75ba # v3.0.1
         with:
+          version-file: "pyproject.toml"
           args: "check --verbose"
           src: "./sshgen"

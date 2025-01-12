@@ -73,6 +73,7 @@ description = "Parse Python docstrings in reST, Google and Numpydoc format"
 optional = false
 python-versions = ">=3.6,<4.0"
 groups = ["main"]
+markers = "python_version < \"4.0\""
 files = [
     {file = "docstring_parser-0.16-py3-none-any.whl", hash = "sha256:bf0a1387354d3691d102edef7ec124f219ef639982d096e26e3b60aeffa90637"},
     {file = "docstring_parser-0.16.tar.gz", hash = "sha256:538beabd0af1e2db0146b6bd3caa526c35a34d61af9fd2887f3a8a27a739aa6e"},
@@ -447,5 +448,5 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 
 [metadata]
 lock-version = "2.1"
-python-versions = "^3.12"
-content-hash = "0d61b55edda3ab70f0f793989780ff8e8fe3c9a698b5661d566b0d5536242bd2"
+python-versions = ">=3.12"
+content-hash = "aadb58bcd7f88635d44950cdc0704f1b33642ca7933d4649043da3a060105a0d"
