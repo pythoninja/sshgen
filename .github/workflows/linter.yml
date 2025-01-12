@@ -23,6 +23,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: astral-sh/ruff-action@31a518504640beb4897d0b9f9e50a2a9196e75ba # v3.0.1
         with:
-          version-file: "pyproject.toml"
+          version: ">=0.9.0"
           args: "check --verbose"
           src: "./sshgen"
