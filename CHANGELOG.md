@@ -2,7 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.8.0](https://github.com/pythoninja/sshgen/compare/v0.7.3..0.8.0) - 2024-09-07
+## [0.9.0](https://github.com/pythoninja/sshgen/compare/v0.8.0..0.9.0) - 2025-01-12
+
+### Features
+
+- Warn if ansible_host is missing - ([5232eac](https://github.com/pythoninja/sshgen/commit/5232eacc64deac6e36bb2f194af22d4348208a15))
+
+### Bug Fixes
+
+- *(ci)* Replace ruff version - ([78d5c26](https://github.com/pythoninja/sshgen/commit/78d5c2649cd330ed215357cc69a6641a95714dba))
+
+### Development
+
+- *(dev)* Migrate pyproject to poetry 2 - ([a7efebe](https://github.com/pythoninja/sshgen/commit/a7efebe18c03519f83de8b565ee41f423593c0ad))
+- *(dev)* Remove ANN ruff rule - ([325fd43](https://github.com/pythoninja/sshgen/commit/325fd43d21f884b80408365354af881e973f88c6))
+
+### Miscellaneous Tasks
+
+- Migrate to astral-sh official action - ([fbb6732](https://github.com/pythoninja/sshgen/commit/fbb67327fd53e2af2619ef89f6f4ae6c1ea93652))
+- Bump poetry to 2.0.0 - ([2843650](https://github.com/pythoninja/sshgen/commit/284365060e7900b5a59d843683207455df0a15ed))
+
+## [0.8.0](https://github.com/pythoninja/sshgen/compare/v0.7.3..v0.8.0) - 2024-09-07
 
 ### Features
 
