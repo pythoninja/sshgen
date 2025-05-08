@@ -2,7 +2,9 @@
 
 SSH configuration generator based on your Ansible hosts YAML file.
 
-Current version: v0.9.0
+| Application | Version | Project tracker                                                        | Status    |
+|-------------|---------|------------------------------------------------------------------------|-----------|
+| sshgen      | v0.9.0  | [GitHub Project Page](https://github.com/users/pythoninja/projects/15) | Completed |
 
 ## Table of Contents
 
