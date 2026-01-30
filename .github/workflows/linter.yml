@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: astral-sh/ruff-action@84f83ecf9e1e15d26b7984c7ec9cf73d39ffc946 # v3.3.1
+      - uses: astral-sh/ruff-action@aedff8d295e5eafdfcc21db7dfdce8cab2c55e7b # v3.6.0
         with:
           version: ">=0.9.0"
           args: "check --verbose"
